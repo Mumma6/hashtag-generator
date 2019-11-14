@@ -6,85 +6,43 @@
  * @flow
  */
 
-import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+import React from "react";
+import {ImageBackground, StyleSheet, View, Text} from "react-native";
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import InputFromText from "./Components/InputFormText";
 
-import InputFromText from './Components/InputFormText';
-
-const App: () => React$Node = () => {
+const App = () => {
   return (
     <>
-      <View style={styles.body}>
-        <View style={styles.sectionContainer}>
-          <Text style={styles.sectionTitle}>Hashtag Generator</Text>
-        </View>
+      <ImageBackground
+        style={styles.container}
+        source={require("./img/image1.jpg")}>
         <View>
-          <InputFromText />
+          <View>
+            <Text style={styles.title}>Hashtag Generator</Text>
+          </View>
+          <View>
+            <InputFromText />
+          </View>
         </View>
-      </View>
+      </ImageBackground>
     </>
   );
 };
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
+  title: {
+    fontSize: 40,
+    margin: 10,
+    textAlign: "center",
+    color: "white",
   },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-
-  body: {
-    backgroundColor: Colors.white,
-    textAlign: 'center',
-    justifyContent: 'center',
-    textAlignVertical: 'center',
-    textAlign: 'center',
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-    alignItems: 'center',
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-    marginBottom: "40px"
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    width: null,
+    height: null,
   },
 });
 
